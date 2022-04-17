@@ -10,11 +10,29 @@
 <select name="food200">
   <option value="">請選擇你的餐點-麵食類</option>
   <!--id定義2為麵食店，200為-->
-   <option value="id201">水餃</option>
-   <option value="id202">辣味水餃</option>
-   <option value="id203">玉米水餃</option>
-   <option value="id204">辣味鍋貼</option>
-   <option value="id205">鍋貼</option>
+   <option sid="2" type="1">水餃</option>
+   <option sid="2" type="2">辣味水餃</option>
+   <option sid="2" type="3">玉米水餃</option>
+   <option sid="2" type="4">辣味鍋貼</option>
+   <option sid="2" type="5">鍋貼</option>
   </select>
-</body>
+
+    <input type="button" value="alert" onclick="opt()">
+    <p id="outvput">你點的餐點id:</p>
+    
+    
+    <!--.arrt("")-->
+    <script>
+        function opt(){      
+          //var options=$("select.food100 option:selected").val();
+          var options=$("select.food200 option:selected").attr("sid");
+          alert(options);
+          var name=$("select.food200 option:selected").attr("type");
+          alert(name);
+          
+          document.getElementById("outvput").innerText=
+          "你點的餐點id:"+options+name+;
+        }
+    </script>
+    </body>
 </html>

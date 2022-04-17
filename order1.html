@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF -8"></meta>
-    <title>uwu</title>
-    <script type="text/javascript" src="test.js"></script>
-  </head>
-  <body>
-  <div class=aaa>
-    </div>
-  <div sid="1" nid="1">法式吐司 $30
-    </div>
-<select name="food100">
-  <option value="">請選擇你的餐點-漢堡類</option>
-  <!--id定義1為早餐店，100為漢堡類-->
-   <option value="id101">卡拉雞腿堡</option>
-   <option value="id102">起司豬排堡</option>
-   <option value="id103">檸檬雞柳堡</option>
-   <option value="id104">烤雞腿堡</option>
-   <option value="id105">香雞堡</option>
+
+<head>
+  <meta charset="UTF -8">
+  </meta>
+  <title>uwu</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    intergrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script type="text/javascript" src="scripts/test.js"></script>
+  <select class="food100">
+    <option value="0">請選擇你的餐點-漢堡類</option>
+    <!--id定義1為早餐店，100為漢堡類-->
+    <option sid="1" type="1">卡拉雞腿堡</option>
+    <option sid="1" type="2">起司豬排堡</option>
+    <option sid="1" type="3">檸檬雞柳堡</option>
+    <option sid="1" type="4">烤雞腿堡</option>
+    <option sid="1" type="5">香雞堡</option>
+    <option sid="1" type="1">蘑菇麵</option>
+    <option sid="1" type="6">黑胡椒麵</option>
+    <option sid="1" type="7">辣肉燥麵</option>
+    <option sid="1" type="8">義大利白醬麵</option>
+    <option sid="1" type="9">義大利肉醬麵</option>
+    <option sid="1" type="10">宮保雞丁麵</option>
+    <option sid="1" type="11">炸角餐</option>
+    <option sid="1" type="12">雞塊綜合餐</option>
+    <option sid="1" type="13">蔥抓餅加蛋</option>
+    <option sid="1" type="14">法式吐司</option>
   </select>
-<select name="food110">
-  <option value="">請選擇你的餐點-鐵板麵類</option>
-  <!--id定義1為早餐店，110為鐵板麵類-->
-   <option value="id111">蘑菇麵</option>
-   <option value="id112">黑胡椒麵</option>
-   <option value="id113">辣肉燥麵</option>
-   <option value="id114">義大利白醬麵</option>
-   <option value="id115">義大利肉醬麵</option>
-   <option value="id116">宮保雞丁麵</option>
+
+  <select class="drink">
+    <option value="0">請選擇你的飲料</option>
+    <!--drink為早餐店飲料-->
+    <option value="blacktea">紅茶</option>
+    <option value="milktea">奶茶</option>
+    <option value="soymilk">豆漿</option>
   </select>
-<select name="food120">
-  <option value="">請選擇你的餐點-點心類</option>
-  <!--id定義1為早餐店，120為點心類-->
-   <option value="id121">炸角餐</option>
-   <option value="id122">雞塊綜合餐</option>
-   <option value="id123">蔥抓餅加蛋</option>
-   <option value="id124">法式吐司</option>
-  </select>
-<select name="drink">
-  <option value="">請選擇你的飲料</option>
-  <!--drink為早餐店飲料-->
-  <option value="blacktea">紅茶</option>
-  <option value="milktea">奶茶</option>
-  <option value="soymilk">豆漿</option>
-</select>
-    <div class="lds-roller"></div>
-    <a href="index.html">第一頁</a>
-    <input type="button" value="alert" onclick="test/name()">
+  <div class="lds-roller"></div>
+  <a href="index.html">第一頁</a>
+  <input type="button" value="alert" onclick="opt()">
+  <p id="outvput">你點的餐點id:</p>
+
+
+
 </body>
+<script>
+  function opt() {
+    //var options=$("select.food100 option:selected").val();
+    var options = $("select.food100 option:selected").attr("sid");
+    alert(options);
+    var name = $("select.food100 option:selected").attr("type");
+    alert(name);
+    var drink = $("select.drink option:selected").attr("value");
+    alert(drink);
+    document.getElementById("outvput").innerText =
+      "你點的餐點id:" + options + name + drink;
+  }
+      //var index = obj.selectedIndex; // 選中索引
+      //var text = obj.options[index].text; // 選中文字
+</script>
+
 </html>
